@@ -1,10 +1,12 @@
-# System Design Interview Problem: :telephone_receiver: Design a Voice-Based Customer Conversation System :robot:
+<img src="https://careers-gua.247-inc.com/SpringboardGUAV2/resources/assets-common/img/logo.png" width="10%" height="10%" alt="247.ai logo" />
 
-## :question: Problem Statement
+## :telephone_receiver: Design a Voice-Based Customer Conversation System :robot:
 
-Here is my understanding (or) :pencil2: transcript of the problem statement prescribed as an assignment over:calling: call.
+### System Design Interview Problem Statement
 
-#### Background
+Here is my understanding (or) transcript :pencil2: of the problem statement :question: prescribed, as an assignment over call. :calling:
+
+#### :hourglass: Background
 
 A fictitious company provides customer support services to multiple clients. Until now, calls were answered by human agents. Due to the increasing volume of calls and the need to streamline the support process, the company wants to deploy an AI BOT to handle these conversations over IP telephony.
 
@@ -37,3 +39,26 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 7. Design storage and search mechanisms for the transcripts and voice recordings.
 
 ## :rocket: Solution :100:
+
+### Functional Analysis & Design
+
+#### Non-Functional Requirments
+
+### High-level Solution
+
+#### Design/Architecture Goals
+
+### Technical Architecture
+
+#### Component Designs
+
+#### Process Flows & Information Models 
+
+### Deployment Architecture
+
+### Performance Assurance
+
+### Security Architecture, Privacy and Compliance
+
+#### References
+
