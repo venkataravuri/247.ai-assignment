@@ -58,6 +58,8 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 
 ### Technical Architecture
 
+<img src="images/tech-stack.jpg" width="80%" height="80%" alt="Tech Stack" />
+
 #### Component Designs
 
 #### Process Flows & Information Models 
