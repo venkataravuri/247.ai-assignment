@@ -48,6 +48,14 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 
 #### Design/Architecture Goals
 
+<img src="images/solution.jpg" width="100%" height="100%" alt="Solution Architecture" />
+
+<img src="images/index.jpg" width="20%" height="20%" alt="Text Index" />
+
+<img src="images/search.jpg" width="20%" height="20%" alt="Search Embeddings" />
+
+<img src="images/answer.jpg" width="100%" height="100%" alt="Question Answer" />
+
 ### Technical Architecture
 
 #### Component Designs
