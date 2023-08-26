@@ -50,15 +50,25 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 
 <img src="images/solution.jpg" width="100%" height="100%" alt="Solution Architecture" />
 
+Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
+
 <img src="images/index.jpg" width="20%" height="20%" alt="Text Index" />
+
+Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
 <img src="images/search.jpg" width="20%" height="20%" alt="Search Embeddings" />
 
+Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
+
 <img src="images/answer.jpg" width="100%" height="100%" alt="Question Answer" />
+
+Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
 ### Technical Architecture
 
 <img src="images/tech-stack.jpg" width="80%" height="80%" alt="Tech Stack" />
+
+Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
 #### Component Designs
 
