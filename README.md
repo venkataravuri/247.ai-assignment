@@ -40,7 +40,10 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 
 ## :rocket: Solution :100:
 
-The solution is explained through follwing 
+This document captures h**igh-level solution** of _re-engineered_ and _re-architected_ solution that replaces existing human-agent centric customer support call centre with :brain: an **AI/ML driven**, :robot: **BOT oriented**, 🚀 **scalable**, 〰️ **elastic** & 🏢 a **multi-tenant** autonomous call centre solution.
+
+* The 🎡 **To-Be System Architecture** is explained through various architecture views such as ```Functional Architecture, Technical Architecture, Deployment Architecture, Component Designs, Technology Choices``` and more, each addressing unique concerns of various stakeholders & audience.
+* Highlights how the proposed solution addresses limitations & constraints for current system with modern AI technology advances.
 
 ### Functional Analysis & Design
 
