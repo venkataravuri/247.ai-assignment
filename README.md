@@ -40,13 +40,27 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 
 ## :rocket: Solution :100:
 
+The solution is explained through follwing 
+
 ### Functional Analysis & Design
 
+A quick use-case analysis has yielded essential buisness functions which are mapped into system fuctions. Related system functions are grouped into functional modules later to be translated into software components.
+
+| Functional Module | Description | Critical System Functions|
+| --- | --- | --- |
+| Voice Gateway | 
+|
+|
+
 #### Non-Functional Requirments
+Solution should adhere to folloiwng NFRs,
 
-### High-level Solution
+1. Low-latency: Being a voice based conversational system, it should process requests in sub-second, so that caller should not feel any delay.
+2. Multi-language: Support multiple spoken languages, should detect language automatically and reply in same language.
+3. Should have gaurdrails against toxcity, bias.
+4. 
 
-#### Design/Architecture Goals
+### Solution Architecture
 
 <img src="images/solution.jpg" width="100%" height="100%" alt="Solution Architecture" />
 
