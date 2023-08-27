@@ -63,6 +63,8 @@ Solution should adhere to folloiwng NFRs,
 3. Should have gaurdrails against toxcity, bias.
 4. 
 
+Performance Assurance section below highlighs how some of the above NFRs are met.
+
 ### Solution Architecture
 
 AI has become more ubiquitous in every software product including contact centers. As AI technology continues to develop, more and more contact centers are using AI to improve customer service. Unlike previous rule-based ML models, Generative AI has great capacity to solve the challenges of contact centers, both improving customer experience and increasing efficiency among human agents.
@@ -79,7 +81,14 @@ Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_
 
 Generative AI LLM models has capability to maintain context throughout an interaction. LLM powered autonomous agents can scour through your previous human-agent transcript knowledge bases. AI powered autonomous Agents can instantly be brought up to speed by accessing full historic interaction transcript.
 
-The solution includes below architectural significant components
+The solution includes below architectural significant components,
+
+| Subystem / Component | Description | Component Design |
+| !--- | !--- | !--- |
+| **Channel Gateway** | An unified routing engine that handles all kinds of traffic such as voice and instant messaging ???? | ??? |
+| 
+
+
 
 
 processes,
