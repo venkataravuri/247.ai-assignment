@@ -84,12 +84,13 @@ Generative AI LLM models has capability to maintain context throughout an intera
 The solution includes below architectural significant components,
 
 | Subystem / Component | Description | Component Design |
-| !--- | !--- | !--- |
+| --- | --- | --- |
 | **Channel Gateway** | An unified routing engine that handles all kinds of traffic such as voice and instant messaging ???? | ??? |
-| 
-
-
-
+| **Transcript Engine & Speech Synthesiser** | Turns audio segments into natural language transcripts and vice versa. It uses speech-to-text and text-to-speech ML models. | |
+| **Semantic Search & Retrieval Engine** | Performs semantic search on text corpus indexed in vector databases. These engines does transcript splitting, generate embeddeings through text embedding models, index & store embedding chunks in vector databases. the also use semantic search algorithms to retireive relvant transcript chunks for given text context.||
+| **Orchestration Engine** | A central task planning, sequencing and execution engine. It is powered by autonomous LLM agent frameworks such as LangChain or LlamaIndex or others. It processes user queries by chaining various tasks which includes audio to text conversion, retrieving relvant documents, prompt selection, generate response and convert into audio. It includes various connectors/plug-ins/tools to perform the tasks.||
+| **ML Pipelines** | A collection of pipelines for LLM model fine-tuning, training, valiation and testing. Pipelines for preparing & updating training corpus by using past human-agent & customer audo recordings. Pipelines to populate Vector database and indexing content. | ? |
+| ML Models & Datat Stores | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage uints.| ? |
 
 processes,
 
