@@ -65,19 +65,34 @@ Solution should adhere to folloiwng NFRs,
 
 ### Solution Architecture
 
-Generative AI has great capacity to solve the challenges of contact centers, both improving customer experience and increasing efficiency among human agents. The solution takes advantage of Gen AI technology to improve contact center opertions with AI-enabled virtual assistants. The solution embraces AI to augment the work of call center agents throuugh “task orchestration” to make contact center work more efficient.
+AI has become more ubiquitous in every software product including contact centers. As AI technology continues to develop, more and more contact centers are using AI to improve customer service. Unlike previous rule-based ML models, Generative AI has great capacity to solve the challenges of contact centers, both improving customer experience and increasing efficiency among human agents.
 
-The AI maintains control of the conversation, without having to transfer the interaction to a live agent, and the customer is able to complete their task with self-service without even being aware of the AI-agent collaboration happening.
+The proposed solution takes advantage of Gen AI technology to improve contact center opertions through AI-enabled virtual assistants. The solution embraces LLM powered AI agents to augment the work of call center agents throuugh “task orchestration” to make contact center work more efficient.
 
-Unlike previous ML models, Gen AI models has capability to maintain context throughout an interaction. 
+The LLM powered agents can control of the customer conversation, without having to transfer the interaction to a live agent, and the customer is able to complete their task with self-service without even being aware of the AI-agent collaboration happening.
 
-LLM powered autonomous agents can scour through your previous human-agent transcript knowledge bases. 
-
-AI powered autonomous Agents can instantly be brought up to speed by accessing full historic interaction transcript 
+Below diagram depicts critical subsystems and components in the solution,
 
 <img src="images/solution.jpg" width="100%" height="100%" alt="Solution Architecture" />
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
+
+Generative AI LLM models has capability to maintain context throughout an interaction. LLM powered autonomous agents can scour through your previous human-agent transcript knowledge bases. AI powered autonomous Agents can instantly be brought up to speed by accessing full historic interaction transcript.
+
+The solution includes below architectural significant components
+
+
+processes,
+
+Training Corpus
+
+Past customer & human-agent conversation voice segments
+Past customer & human-agent transcript knowledge bases
+
+Model Fine-tuning
+
+Model Evaluation & Live Experimentation
+
 
 <img src="images/index.jpg" width="20%" height="20%" alt="Text Index" />
 
