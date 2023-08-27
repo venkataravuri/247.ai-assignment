@@ -53,7 +53,7 @@ A quick use-case analysis has yielded essential buisness functions which are map
 | --- | --- | --- |
 | Voice Gateway | 
 |
-|
+| 
 
 #### Non-Functional Requirments
 Solution should adhere to folloiwng NFRs,
@@ -64,6 +64,16 @@ Solution should adhere to folloiwng NFRs,
 4. 
 
 ### Solution Architecture
+
+Generative AI has great capacity to solve the challenges of contact centers, both improving customer experience and increasing efficiency among human agents. The solution takes advantage of Gen AI technology to improve contact center opertions with AI-enabled virtual assistants. The solution embraces AI to augment the work of call center agents throuugh “task orchestration” to make contact center work more efficient.
+
+The AI maintains control of the conversation, without having to transfer the interaction to a live agent, and the customer is able to complete their task with self-service without even being aware of the AI-agent collaboration happening.
+
+Unlike previous ML models, Gen AI models has capability to maintain context throughout an interaction. 
+
+LLM powered autonomous agents can scour through your previous human-agent transcript knowledge bases. 
+
+AI powered autonomous Agents can instantly be brought up to speed by accessing full historic interaction transcript 
 
 <img src="images/solution.jpg" width="100%" height="100%" alt="Solution Architecture" />
 
@@ -88,6 +98,11 @@ Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
 #### Component Designs
+
+Contact centers has to train ML models to their 
+
+Better part ot training would be prompt engineering, to tune prompts for good auto summarization with given context.
+
 
 #### Process Flows & Information Models 
 
