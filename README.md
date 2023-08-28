@@ -4,7 +4,7 @@
 
 ### System Design Interview - Problem Statement
 
-Here is my understanding (or) transcript :pencil2: of the problem statement :question: prescribed, as an assignment over call. :calling:
+Here is the transcript :pencil2: of the problem statement :question: given as an assignment over call. :calling:
 
 #### :hourglass: Background
 
@@ -110,8 +110,10 @@ These Knowledge Bases (KB) are created using _past customer & human-agent conver
   <td width="65%" valign="top">
     <ul>
       <li>Fetch past caller and human-agent responses audio segments.</li>
-      <li>Generate text transcripts using Speech-to-text models such as </li>
-    <ul>
+      <li>Generate text transcripts using Speech-to-text models such as <a href="https://openai.com/research/whisper" target="_blank">OpenAI Whisper</a>.</li>
+      <li>Generate text embeddings for transcript chunk using <a href="https://huggingface.co/sentence-transformers" target="_blank">Huggingface statement transformers</a> or other open-soure text embeddings models.</li>
+      <li>Store original transcripts and transcript embedding chunks into Vector DB.</li>
+    </ul>
   </td>
   </tr>
 </table>
