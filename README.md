@@ -102,7 +102,9 @@ The proposed solution includes below high-level processes,
 
 A knowledge base (KB) is a self-service customer service library that includes information about a product, service, answers to FAQs, company procedcures and polocies and more. Unlike human-readable KB articles, machine-readable knowledge bases store data that can easily intrepeted & used by ML models & systems. 
 
-These Knowledge Bases (KB) are created using _past customer & human-agent conversations (voice segments)_. Below diagram depicts, high-level tasks involved in converting call voice segments into transcripts and organize them to be used later infromation source during ML model training phase, 
+These Knowledge Bases (KB) are created using _past customer & human-agent conversations (voice segments)_.
+
+Below diagram depicts, high-level tasks involved in converting call voice segments into transcripts and organize them to be used later infromation source during ML model training phase, 
 
 <table style="width: 100%;">
   <tr>
@@ -120,23 +122,44 @@ These Knowledge Bases (KB) are created using _past customer & human-agent conver
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
-Model Fine-tuning
+### Semantic Search Knowledge Base
 
-Model Evaluation & Live Experimentation
+Below process flow diagram depicts high-level tasks to fetch relevant transcripts to be used as additional context when prompting LLMs for AI agent response,
 
-<img src="images/search.jpg" width="20%" height="20%" alt="Search Embeddings" />
+<table style="width: 100%;">
+  <tr>
+  <td align="center"><img src="images/search.jpg" width="60%" height="60%" alt="Search Embeddings" /></td>
+  <td width="65%" valign="top">
+    <ul>
+      <li>Convert caller query & conversation into transcript.</li>
+      <li>Query Vector databases for relevant documents using semantic search algorithms such as MMR, ? .</li>
+      <li>Relevant documents are later used in LLM prompting to generate response.</li>
+    </ul>
+  </td>
+  </tr>
+</table>
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
+
+Below diagram depicts high-level tasks to generate response using LLMs prompting,
 
 <img src="images/answer.jpg" width="100%" height="100%" alt="Question Answer" />
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
+
+LLM will be prompted with ```Conversation History```, relevant ```Business Systems Data``` and ```Caller Question/Conversation```
+- LLM generates respoinse
+- The response text is synthesised in voice respones and played back to caller.
 
 ### Technical Architecture
 
 <img src="images/tech-stack.jpg" width="80%" height="80%" alt="Tech Stack" />
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
+
+Model Fine-tuning
+
+Model Evaluation & Live Experimentation
 
 #### Component Designs
 
