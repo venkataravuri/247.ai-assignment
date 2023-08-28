@@ -225,13 +225,20 @@ Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_
 | **Channel Gateway** | The gateway should be designed as low-latency & high-througput service. Its a stateful service which has to be horizontally scaled. Preferred programming language for this service is C/C++ or GoLang. It interfaces with Orchestration Engine for autonomous conversation. The gateway interfaces with VOIP PABX and Internet to convert incoming audio stream into chunks.
 | **Orchestration Engine** | It defines task sequencing to understand caller utterance, intent finding, prompt template selection, prompt llms and response generation. It should parallelize tasks where feasible. It employs Async I/O techniques to overcome low-latency and high-througput. The workfow state should be managed in in-memory for low-latency processing. It leverages LangChain framework components internally for many tasks. |
 | **UI/UX Interfaces** | Admin Console, Call Telemetry and KIP Dashboards are built as Single Page Applications using Node.JS, Next.JS with ReactJS compnents.|
-| KubeFlow Pipelines | 
+| **KubeFlow Pipelines** | Create and Manage Knowldge Base pipeline that creates training and test corpus using previously record human agent & caller voice conversations. <br />
+Create and index human agent voice conversations. <br />
+LLM models fine-tune pipeline witht training, validation and testing. <br />
+LLM benchmarking pipeline <br />
+LLM inferencing pipeline <br />|
+
+### Model Evaluation Metrics
 
 
-Model Evaluation Metrics
+More about haullicination, toxicity and bias are discussed at ??? section.
 
+### Experiments
 
-
+LLMs are evolving research topic. Rollout of these metrics are 
 Model Evaluation & Live Experimentation
 
 ### Deployment Architecture
@@ -239,6 +246,11 @@ Model Evaluation & Live Experimentation
 ### Performance Assurance
 
 ### Security Architecture, Privacy and Compliance
+
+### Out of Scope
+
+Due to time constraints, following design aspects are not covered,
+1. Protocols & interfacing mechanisms between components.
 
 #### References
 - https://docs.langchain.com/docs/
