@@ -233,7 +233,13 @@ LLM inferencing pipeline <br />|
 
 ### :balance_scale: Model Evaluation Metrics
 
-LLM & Other models are evaluated for 
+LLM & Other models are evaluated with following metrics that evaluate for accuracy, relvance, toxicity and bians and many other aspects,
+
+- **Perplexity**: Intuitively, perplexity means to be surprised. Perplexity is usually used only to determine how well a model has learned the training set. How much the model is surprised by seeing new data. Perplexity is calculated as exponent of the loss obtained from the model.
+- **ROGUE & BLEU**:  Used on the testset to measure test performance. Metric compares an automatically produced summary or translation against human-produced summary or translation. It measures how many of the n-grams in the references are in the predicted candidate.
+- **GLUE benchmark** that measures the general language understanding ability.
+
+Source: https://huggingface.co/evaluate-metric
 
 More about haullicination, toxicity and bias are discussed at ??? section.
 
@@ -243,6 +249,7 @@ LLMs are evolving research topic. Rollout of these metrics are
 Model Evaluation & Live Experimentation
 
 ### Deployment Architecture
+
 
 ### Performance Assurance
 
