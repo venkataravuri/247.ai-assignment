@@ -157,7 +157,35 @@ LLM will be prompted with ```Conversation History```, relevant ```Business Syste
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
-Model Fine-tuning
+#### :motorcycle: LLM Model Fine-tuning
+
+Pretrained large language foundation models can be used for new tasks in following ways,
+1. in-context learning
+2. Sort Prompt Tuning
+3. Parameter-Efficient Finetuning
+
+In-context learning doesn’t require further train or finetune pretrained LLMs to perform specific or new tasks that the LLM wasn’t explicitly trained on. Instead, directly provide a few examples of a target task via the input prompt. Related to in-context learning is the concept of **hard prompt tuning** where inputs are modified in hope to improve the outputs.
+
+Pre-trained Large language models (LLMs) may not perform as well on specific tasks without finetuning, finetuning it on a corpus of human-agent conversation transcripts can significantly improve the model's performance. 
+
+Finetuning LLMs can be very expensive in terms of computational resources and time, which is why researchers started developing parameter-efficient finetuning methods.
+
+
+researchers developed several techniques (Lialin et al.) to finetune LLM with high modeling performance while only requiring the training of only a small number of parameters. These methods are usually referred to as parameter-efficient finetuning techniques (PEFT).
+
+By the way, we call it hard prompt tuning because we are modifying the input words or tokens directly.
+
+It is preferred to use a combination of In-context learning and parameter fine-tuned model for specific tasks.
+
+Soft prompt tuning (or often just called prompt tuning).
+ 
+Foundation models has to be fine-tuned.
+
+Finet
+
+Model Evaluation Metrics
+
+
 
 Model Evaluation & Live Experimentation
 
@@ -166,7 +194,6 @@ Model Evaluation & Live Experimentation
 Contact centers has to train ML models to their 
 
 Better part ot training would be prompt engineering, to tune prompts for good auto summarization with given context.
-
 
 #### Process Flows & Information Models 
 
@@ -177,4 +204,7 @@ Better part ot training would be prompt engineering, to tune prompts for good au
 ### Security Architecture, Privacy and Compliance
 
 #### References
+- https://docs.langchain.com/docs/
+- https://magazine.sebastianraschka.com/p/ahead-of-ai-11-new-foundation-models
 
+:pray::pray::pray:
