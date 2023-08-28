@@ -231,8 +231,9 @@ LLM models fine-tune pipeline witht training, validation and testing. <br />
 LLM benchmarking pipeline <br />
 LLM inferencing pipeline <br />|
 
-### Model Evaluation Metrics
+### :balance_scale: Model Evaluation Metrics
 
+LLM & Other models are evaluated for 
 
 More about haullicination, toxicity and bias are discussed at ??? section.
 
@@ -244,6 +245,11 @@ Model Evaluation & Live Experimentation
 ### Deployment Architecture
 
 ### Performance Assurance
+
+Critical performance criteril is low-latency transactions. It means, agent should respond in sub-seconds < 250 to 500 milli seconds, otherwise caller will notice lag and impacts experience.
+
+To achieve low-latency, every component in chain will have performance budgets in terms of time. Below is performance budget of each component,
+
 
 ### Security Architecture, Privacy and Compliance
 
