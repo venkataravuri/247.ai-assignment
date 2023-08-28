@@ -93,7 +93,20 @@ The solution includes below architectural significant components,
 | ML Models & Datat Stores | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage uints.| ? |
 | **UI/UX - Dashboards & Admin Console** | An AI powered visualizations & KPIs interested to company executives (CXOs), System telemetry information, and sytem administration & configuration UI.| ? |
 
+### Half-duplex Vs Full-duplex Communications
+
+AI agent can designed for half-duplex & full-duplex communication models,
+
+- Half-duplex architectures, which means the user and the assistant must take turns to speak. Neither caller/agent cannot interrupt. Its a turn-based conversational model.
+- Full-duplex architectures enable bi-directional communication as both parties are always listening even when speaking or acting
+
+Will full-duplex architecture callers can correct the AI’s understanding as soon as it is apparent there is an issue which enables more efficient interactions. Full-duplex can perform actual proactive moderation of live voice chat because the system is not batching text to be analyzed but instead analyzing the meaning of the user speech in parallel with transcription.
+
+Start with half-duplex communication and progress into full-duplex as we make progress.
+
 ### Prompt Engineering
+
+The solution employs prompt engineering techniques to respond caller. Prompt engineering techinquies such as Retrieval Augmented Generation (RAG), Tree of Thoughts or anyother time-efficient techinques.
 
 ```
 
@@ -113,6 +126,9 @@ Caller:
 Agent:
 
 ```
+
+#### Process Flows & Information Models 
+
 
 The proposed solution includes below high-level processes,
 
@@ -204,6 +220,12 @@ Below diagram depicts critical components in the solution,
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
+| Component | High-level Design |
+| --- | --- |
+| **Channel Gateway** | The gateway should be designed as low-latency & high-througput service. Its a stateful service which has to be horizontally scaled. Preferred programming language for this service is C/C++ or GoLang. It interfaces with Orchestration Engine for autonomous conversation. The gateway interfaces with VOIP PABX and Internet to convert incoming audio stream into chunks.
+| **Orchestration Engine** | It defines task sequencing to understand caller utterance, intent finding, prompt template selection, prompt llms and response generation. It should parallelize tasks where feasible. It employs Async I/O techniques to overcome low-latency and high-througput. The workfow state should be managed in in-memory for low-latency processing. It leverages LangChain framework components internally for many tasks. |
+| **UI/UX Interfaces** | Admin Console, Call Telemetry and KIP Dashboards are built as Single Page Applications using Node.JS, Next.JS with ReactJS compnents.|
+| KubeFlow Pipelines | 
 
 
 Model Evaluation Metrics
@@ -211,14 +233,6 @@ Model Evaluation Metrics
 
 
 Model Evaluation & Live Experimentation
-
-#### Component Designs
-
-Contact centers has to train ML models to their 
-
-Better part ot training would be prompt engineering, to tune prompts for good auto summarization with given context.
-
-#### Process Flows & Information Models 
 
 ### Deployment Architecture
 
@@ -229,5 +243,6 @@ Better part ot training would be prompt engineering, to tune prompts for good au
 #### References
 - https://docs.langchain.com/docs/
 - https://magazine.sebastianraschka.com/p/ahead-of-ai-11-new-foundation-models
-
+- https://www.yeastar.com/blog/everything-you-need-to-know-about-pabx/
+  
 :pray::pray::pray:
