@@ -91,22 +91,36 @@ The solution includes below architectural significant components,
 | **Orchestration Engine** | A central task planning, sequencing and execution engine. It is powered by autonomous LLM agent frameworks such as LangChain or LlamaIndex or others. It processes user queries by chaining various tasks which includes audio to text conversion, retrieving relvant documents, prompt selection, generate response and convert into audio. It includes various connectors/plug-ins/tools to perform the tasks.||
 | **ML Pipelines** | A collection of pipelines for LLM model fine-tuning, training, valiation and testing. Pipelines for preparing & updating training corpus by using past human-agent & customer audo recordings. Pipelines to populate Vector database and indexing content. | ? |
 | ML Models & Datat Stores | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage uints.| ? |
+| **UI/UX - Dashboards & Admin Console** | An AI powered visualizations & KPIs interested to company executives (CXOs), System telemetry information, and sytem administration & configuration UI.| ? |
 
-processes,
+The proposed solution includes below high-level processes,
 
-Training Corpus
+1. Creare  & Manage Machine-readable Knowledge Bases
 
-Past customer & human-agent conversation voice segments
-Past customer & human-agent transcript knowledge bases
+
+### Machine-readble Knowledge Bases
+
+A knowledge base (KB) is a self-service customer service library that includes information about a product, service, answers to FAQs, company procedcures and polocies and more. Unlike human-readable KB articles, machine-readable knowledge bases store data that can easily intrepeted & used by ML models & systems. 
+
+These Knowledge Bases (KB) are created using _past customer & human-agent conversations (voice segments)_. Below diagram depicts, high-level tasks involved in converting call voice segments into transcripts and organize them to be used later infromation source during ML model training phase, 
+
+<table style="width: 100%;">
+  <tr>
+  <td align="center"><img src="images/index.jpg" width="60%" height="60%" alt="Text Index" /></td>
+  <td width="65%" valign="top">
+    <ul>
+      <li>Fetch past caller and human-agent responses audio segments.</li>
+      <li>Generate text transcripts using Speech-to-text models such as </li>
+    <ul>
+  </td>
+  </tr>
+</table>
+
+Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
 Model Fine-tuning
 
 Model Evaluation & Live Experimentation
-
-
-<img src="images/index.jpg" width="20%" height="20%" alt="Text Index" />
-
-Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
 <img src="images/search.jpg" width="20%" height="20%" alt="Search Embeddings" />
 
