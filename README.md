@@ -93,10 +93,32 @@ The solution includes below architectural significant components,
 | ML Models & Datat Stores | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage uints.| ? |
 | **UI/UX - Dashboards & Admin Console** | An AI powered visualizations & KPIs interested to company executives (CXOs), System telemetry information, and sytem administration & configuration UI.| ? |
 
+### Prompt Engineering
+
+```
+
+# Conversation History
+
+Agent: Welcome to {Company}'s customer support service. Can you state your problem?
+Caller: I have bougt a new mobile phone at {company} store and also bought new 5G 5SIM card other day. But
+Agent:
+Caller:
+Agent:
+
+# Additional Context
+
+# Caller Query
+
+Caller:
+Agent:
+
+```
+
 The proposed solution includes below high-level processes,
 
 1. Creare  & Manage Machine-readable Knowledge Bases
-
+2. ?
+3. ?
 
 ### Machine-readble Knowledge Bases
 
@@ -151,12 +173,6 @@ LLM will be prompted with ```Conversation History```, relevant ```Business Syste
 - LLM generates respoinse
 - The response text is synthesised in voice respones and played back to caller.
 
-### Technical Architecture
-
-<img src="images/tech-stack.jpg" width="80%" height="80%" alt="Tech Stack" />
-
-Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
-
 #### :motorcycle: LLM Model Fine-tuning
 
 Pretrained large language foundation models can be used for new tasks in following ways,
@@ -170,18 +186,25 @@ Pre-trained Large language models (LLMs) may not perform as well on specific tas
 
 Finetuning LLMs can be very expensive in terms of computational resources and time, which is why researchers started developing parameter-efficient finetuning methods.
 
+### Retrieval Augment Generation
 
-researchers developed several techniques (Lialin et al.) to finetune LLM with high modeling performance while only requiring the training of only a small number of parameters. These methods are usually referred to as parameter-efficient finetuning techniques (PEFT).
+???
 
-By the way, we call it hard prompt tuning because we are modifying the input words or tokens directly.
+### Technical Architecture
 
-It is preferred to use a combination of In-context learning and parameter fine-tuned model for specific tasks.
+A layered application architecture followed to turn system functions into software artifacts. Application components are designed as collection of microservices aka. Cloud-Native apps. Cloud native apps can exploit scale, elasticity, resiliency, and flexibility provided by in public clouds. Individual teams can work on these microservices and rollout new functionality quickly.
 
-Soft prompt tuning (or often just called prompt tuning).
- 
-Foundation models has to be fine-tuned.
+- The Microservices designed as self contained services, packed as containers for portability, deployed to immutable infrastructure.
+- Microservices communicate with each other via APIs and use event-driven architecture, which makes them loosely coupled, serves to enhance the overall performance of each application. For latency reasons the services communicate over gRPC with proto buffers.
+- Each service can be written in a different programming language and tested separately.
 
-Finet
+Below diagram depicts critical components in the solution,
+
+<img src="images/tech-stack.jpg" width="80%" height="80%" alt="Tech Stack" />
+
+Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
+
+
 
 Model Evaluation Metrics
 
