@@ -259,15 +259,26 @@ LLM & Other models are evaluated with following metrics that evaluate for accura
 
 Source: https://huggingface.co/evaluate-metric
 
-More about haullicination, toxicity and bias are discussed at ??? section.
+When deploying CLMs in real-world contexts, it's important to assess how likely they are to produce problematic content, such as hate speech. 
+- Test with WinoBias dataset.
+- [BOLD dataset](https://huggingface.co/datasets/AlexaAI/bold) with goal of evaluating fairness in open-ended language generation in English.
+
+Use bias evaluation metric [HONEST](https://huggingface.co/spaces/evaluate-measurement/honest).
 
 ### :magic_wand: Experiments
 
-LLMs are evolving research topic. Rollout of these metrics are 
-Model Evaluation & Live Experimentation
+LLMs are evolving research topic. Conduct experiments with past human-agent responses as training and validation corpus.
+
+Use combination of NLU models like RASA DIET along wiht LLMs.
 
 ### Deployment Architecture
 
+A rough sketch of deployment design. Due to time constraints could not depict below information,
+1. Regions, zones and autoscalability
+2. Protocols and traffic connections
+3. and more ...
+
+<img src="images/deployment.jpg" width="50%" height="50%" />
 
 ### :surfer: Performance Assurance
 
