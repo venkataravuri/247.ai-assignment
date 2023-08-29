@@ -88,6 +88,8 @@ They can,
 - Engages customers with human-like conversations
 - Pinpoints user intentions with precision
 
+> LLMs inferences take longer, need to explore right LLM size to meet performance budgets.
+
 Below diagram depicts critical subsystems and components in the solution,
 
 <img src="images/solution.jpg" width="100%" height="100%" alt="Solution Architecture" />
