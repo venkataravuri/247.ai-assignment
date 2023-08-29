@@ -52,6 +52,8 @@ A quick use-case analysis has yielded essential buisness functions which are map
 | Functional Module | Description |
 | --- | --- |
 | Channel Interfaces | A unified communication interface that accepts & answers voice calls made by phone, voice based queries from an web or mobile application and text-based chat interface. |
+| Audio to text & Text to Audio | ML models to convert speech audio segments to text and vice versa.|
+| Autonomous Agent Functions | An agent powered by AI/ML models which detect user intent, search past human-agent responses, generate responses to caller. |
 | Analytics Dashboard | A GUI interface to display Key Performance Indicators (KPIs) showcasing operational efficiency. |
 | ML training, validation, testing, Serving | A framework for training data preparation,  ML model training validation
 
@@ -278,7 +280,9 @@ A rough sketch of deployment design. Due to time constraints could not depict be
 2. Protocols and traffic connections
 3. and more ...
 
-<img src="images/deployment.jpg" width="50%" height="50%" />
+<img src="images/deployment.png" width="60%" height="60%" />
+
+https://docs.google.com/presentation/d/1rxz_4hgOfYA0cCVt5xek8KbYtX1OWBTSkCZrFH91cDU/edit?usp=sharing
 
 ### :surfer: Performance Assurance
 
