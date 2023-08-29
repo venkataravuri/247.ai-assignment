@@ -1,6 +1,6 @@
 <img src="https://careers-gua.247-inc.com/SpringboardGUAV2/resources/assets-common/img/logo.png" width="10%" height="10%" alt="247.ai logo" />
 
-## :telephone_receiver: Design an Autonomous AI Agent driven Voice-based Contact Center System :robot:
+## :telephone_receiver: Design an Autonomous AI Agent driven Voice-based Contact Center System :robot: :brain:
 
 ### System Design Interview - Problem Statement
 
@@ -45,9 +45,9 @@ This document captures **high-level solution** of _autonomous AI agent driven co
 * The 🎡 **To-Be System Architecture** is explained through various architecture views such as ```Functional Architecture```, ```Technical Architecture```, ```Deployment Architecture```, ```Component Designs``` and ```Technology Stack & Choices```, each addressing unique concerns of stakeholders & audience.
 * Highlights how the proposed solution addresses requirements & constraints with modern AI technology advances.
 
-### Functional Analysis & Design
+### :rainbow: Functional Analysis & Design
 
-A quick use-case analysis has yielded essential buisness functions which are mapped into system fuctions. These related system functions are grouped into functional modules later translated into software components.
+A quick use-case analysis has yielded essential buisness functions which are mapped into system fuctions. These related system functions are grouped into functional modules later translated into :minidisc: software components.
 
 | Functional Module | Description |
 | --- | --- |
@@ -55,18 +55,17 @@ A quick use-case analysis has yielded essential buisness functions which are map
 | Analytics Dashboard | A GUI interface to display Key Performance Indicators (KPIs) showcasing operational efficiency. |
 | ML training, validation, testing, Serving | A framework for training data preparation,  ML model training validation
 
-#### Non-Functional Requirments
+#### :rocket: Non-Functional Requirments
 
 As an interactive system, the solution should adhere to folloiwng NFRs,
 
 1. Low-latency: Being a voice based conversational system, it should process requests in sub-second, so that caller should not feel any delay.
 2. Multi-language: Support multiple spoken languages, should detect language automatically and reply in same language.
-3. Should have gaurdrails against toxcity, bias.
-4. 
+3. Should have gaurdrails against hallucination, toxcity, bias.
 
 Performance Assurance section below highlighs how some of the above NFRs are met.
 
-### Solution Architecture
+## :bulb: Solution Architecture
 
 AI has become more ubiquitous in every software product including contact centers. As AI technology continues to develop, more and more contact centers are using AI to improve customer service. Unlike previous rule-based ML models, Generative AI has great capacity to solve the challenges of contact centers, both improving customer experience and increasing efficiency among human agents.
 
@@ -74,11 +73,11 @@ The proposed solution takes advantage of Generative AI technology to improve con
 
 The LLM powered agents can control of the customer conversation, without having to transfer the interaction to a live agent, and the customer is able to complete their task with self-service without even being aware of the AI-agent collaboration happening.
 
-### Generative AI (LLM) Vs. Rule-based NLP/NLU
+### :brain: Generative AI (LLM) :robot: Vs. Rule-based NLP/NLU
 
 Traditional NLU ML models takes user input in text format and extract structured data (intents and entities) which helps and assistant to understand what the caller wants. The NLU pipelines rely on hand-crafted rules or predefined response templates, which limit their conversational scope, adaptability, and ability to generate diverse responses. Rule-based chatbots can feel robotic sometimes.
 
-Large Language Models (LLMs) have potential use beyond text generation, summarization, and code generation. LLMs are exhibiting logical reasoning capabilbies, if prompted well they can recognize caller's intent and generate contextually appropriate responses, and adapt to user inputs. 
+:speech_balloon: Large Language Models (LLMs) have potential use beyond text generation, summarization, and code generation. LLMs are exhibiting logical reasoning capabilbies, if prompted well they can recognize caller's intent and generate contextually appropriate responses, and adapt to user inputs. 
 
 They can,
 - Deliver personalized experiences at scale.
@@ -100,7 +99,7 @@ The solution includes below architectural significant components,
 | Subystem / Component | Description |
 | --- | --- |
 | **Channel Gateway** | An unified routing engine that handles both audio/voice and text traffic. It receives audio segments from VOIP/PABX and from voice based applications, chunkify them, forward to Orchestrtion Engine further processing.|
-| **Transcript Engine & Speech Synthesiser** | Turns audio segments into natural language transcripts and vice versa. It uses speech-to-text and text-to-speech ML models such as OpenAI Whishper. |
+| **:mega: Transcript Engine & Speech Synthesiser** | Turns audio segments into natural language transcripts and vice versa. It uses speech-to-text and text-to-speech ML models such as OpenAI Whishper. |
 | **Semantic Search & Retrieval Engine** | Performs semantic search on text corpus indexed in vector databases. It does transcript splitting, generate vector embeddeings through text embedding models, index & store embedding chunks in vector databases. They use semantic search algorithms such as approximate nearest neighbor (ANN) to retireive relvant transcript chunks for given text context.|
 | **Orchestration Engine** | A central task planning, sequencing and execution engine. It is powered by autonomous LLM agent frameworks such as LangChain or LlamaIndex or others. It processes user queries by chaining various tasks which includes audio to text conversion, retrieving relvant documents, prompt selection, generate response and convert into audio. It includes various connectors/plug-ins/tools to perform the tasks. |
 | **ML Pipelines** | A collection of pipelines for LLM model fine-tuning, training, valiation and testing. Pipelines for preparing & updating training corpus by using past human-agent & customer audo recordings. Pipelines to populate Vector database and indexing content. |
@@ -229,7 +228,7 @@ In-context learning doesn’t require further train or finetune pretrained LLMs 
 
 Pre-trained Large language models (LLMs) may not perform as well on specific tasks without finetuning, finetuning it on a corpus of human-agent conversation transcripts can significantly improve the model's performance. Finetuning LLMs can be very expensive in terms of computational resources and time, rely on parameter-efficient finetuning methods.
 
-### Technical Architecture
+### :fire: Technical Architecture
 
 A layered application architecture has been adopted for the solution. Majority of system components are designed as self contained services aka. microservices. The components adhere to Cloud-Native principles. Cloud native apps can exploit scale, elasticity, resiliency, and flexibility provided by in public clouds. Individual teams can work on these microservices and rollout new functionality quickly.
 
@@ -262,7 +261,7 @@ Source: https://huggingface.co/evaluate-metric
 
 More about haullicination, toxicity and bias are discussed at ??? section.
 
-### Experiments
+### :magic_wand: Experiments
 
 LLMs are evolving research topic. Rollout of these metrics are 
 Model Evaluation & Live Experimentation
@@ -270,14 +269,14 @@ Model Evaluation & Live Experimentation
 ### Deployment Architecture
 
 
-### Performance Assurance
+### :surfer: Performance Assurance
 
 Critical performance criteril is low-latency transactions. It means, agent should respond in sub-seconds < 250 to 500 milli seconds, otherwise caller will notice lag and impacts experience.
 
 To achieve low-latency, every component in chain MUST adhere to performance budgets in terms of time. Below are performance budgets of each component,
 
 
-### Security Architecture, Privacy and Compliance
+### :lock: Security Architecture, Privacy and Compliance :old_key:
 
 Security Architecture is about how Confidentiality, Integrity, Availability (CIA) ensure in entire solutionn across all components and interfaces.
 
@@ -290,7 +289,7 @@ Security Architecture is about how Confidentiality, Integrity, Availability (CIA
 - Leverage Key Management solutions such as HashiCorp Valut to store credentials and certificates.
 - Authorization by roles and permissions by actor.
 
-#### Privacy & Data Residency
+#### :eagle: Privacy & Data Residency
 
 As solution is offered as SaaS application globally, it will be subjected to privacy and data localization requirements.
 
