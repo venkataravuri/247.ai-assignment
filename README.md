@@ -282,7 +282,7 @@ A rough sketch of deployment design. Due to time constraints could not depict be
 2. Protocols and traffic connections
 3. and more ...
 
-<img src="images/deployment.png" width="60%" height="60%" />
+<img src="images/deployment.png" width="80%" height="80%" />
 
 https://docs.google.com/presentation/d/1rxz_4hgOfYA0cCVt5xek8KbYtX1OWBTSkCZrFH91cDU/edit?usp=sharing
 
@@ -291,6 +291,8 @@ https://docs.google.com/presentation/d/1rxz_4hgOfYA0cCVt5xek8KbYtX1OWBTSkCZrFH91
 Critical performance criteril is low-latency transactions. It means, agent should respond in sub-seconds < 250 to 500 milli seconds, otherwise caller will notice lag and impacts experience.
 
 To achieve low-latency, every component in chain MUST adhere to performance budgets in terms of time. Below are performance budgets of each component,
+
+<img src="images/budget.jpg" width="70%" height="70%" />
 
 
 ### :lock: Security Architecture, Privacy and Compliance :old_key:
