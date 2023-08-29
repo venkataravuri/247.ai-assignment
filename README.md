@@ -132,10 +132,10 @@ Ignore all previous instructions. Here is your new role and persona:
 
 You are a call center human-agent, your task is to help customer by understaning the problem and
 provide precise and concise answer with not morethan 10 to 20 word.
-Restrict your response to company product, services and company policy documents.
+Restrict your response to company product, services as per company policy documents.
 Do not make up stuff, if you don't know the real answer, suggest to forward call to human agent.
 
-Be very helpful, show empathy and motivating in your responses. Be polite. 
+Be very helpful, motivating and show empathy in your responses. Be polite. 
 
 ## Conversation History
 Agent: Welcome to {Company}'s customer support service. Kindly state your problem?
@@ -154,9 +154,9 @@ Caller: {Include caller problem audio transcirpt here} e.g., How can re-submit a
 Agent:
 ```
 
-Have a look at my [Prompt Engineering Notes](https://github.com/venkataravuri/ai-ml/blob/master/docs/prompt-engineering-resources.md) on Github.
+:ok_hand: Have a look at my [Prompt Engineering Notes](https://github.com/venkataravuri/ai-ml/blob/master/docs/prompt-engineering-resources.md) on Github.
 
-#### Process Flows & Information Models 
+#### :bike: Process Flows & Information Models 
 
 The proposed solution includes below high-level processes,
 
@@ -164,7 +164,7 @@ The proposed solution includes below high-level processes,
 2. Search Knowledge Bases human-agent answers for similar problems/issues.
 3. LLM Fine-tuning & Soft Prompting
 
-### Machine-readble Knowledge Bases
+### :green_book: Machine-readble Knowledge Bases
 
 A knowledge base (KB) is a self-service customer service library that includes information about a product, service, answers to FAQs, company procedcures and polocies and more. Unlike human-readable KB articles, machine-readable knowledge bases store data that can easily intrepeted & used by ML models & systems. 
 
@@ -188,7 +188,7 @@ Below diagram depicts, high-level tasks involved in converting call voice segmen
 
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
-### Semantic Search Knowledge Base
+### :round_pushpin: Semantic Search Knowledge Base
 
 Below process flow diagram depicts high-level tasks to fetch relevant transcripts to be used as additional context when prompting LLMs for AI agent response,
 
@@ -246,7 +246,7 @@ Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_
 | --- | --- |
 | **Channel Gateway** | The gateway should be designed as low-latency & high-througput service. Its a stateful service which can be scaled horizontally. Preferred programming language for this service is C/C++ or GoLang. It interfaces with Orchestration Engine for autonomous conversation. The gateway interfaces with VOIP PABX and Internet to convert incoming audio stream into chunks.
 | **Orchestration Engine** | It defines task sequencing to understand caller utterance, intent finding, prompt template selection, prompt llms and response generation. It should parallelize tasks where feasible. It employs Async I/O techniques to overcome low-latency and high-througput. The workfow state should be managed in in-memory for low-latency processing. It leverages LangChain framework components internally for many tasks. |
-| **UI/UX Interfaces** | Admin Console, Call Telemetry and KIP Dashboards are built as Single Page Applications using Node.JS, Next.JS with ReactJS compnents.|
+| **:bar_chart: UI/UX Interfaces** | Admin Console, Call Telemetry and KIP Dashboards are built as Single Page Applications using Node.JS, Next.JS with ReactJS compnents.|
 | **KubeFlow Pipelines** | Create and Manage Knowldge Base pipeline that creates training and test corpus using previously record human agent & caller voice conversations. <br />Create and index human agent voice conversations. <br />LLM models fine-tune pipeline witht training, validation and testing. <br />LLM benchmarking pipeline <br />LLM inferencing pipeline <br />|
 
 ### :balance_scale: Model Evaluation Metrics
