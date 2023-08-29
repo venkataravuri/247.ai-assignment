@@ -40,7 +40,7 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 
 ## :rocket: Solution :100:
 
-This document captures **high-level solution** of _autonomous AI agent driven contact center_ system that replaces existing human-agent centric customer support call centre with :brain: an **AI/ML driven**, :robot: **BOT oriented**, 🚀 **scalable**, 〰️ **elastic** & 🏢 a **multi-tenant** autonomous call centre solution.
+This document captures **high-level solution** of _autonomous AI agent driven contact center_ system that replaces existing human-agent centric customer support call centre with :brain: an **AI/ML driven**, :robot: **BOT oriented**, 🚀 **scalable**, 〰️ **elastic** & 🏢 a **~~multi-tenant~~** autonomous call centre solution.
 
 * The 🎡 **To-Be System Architecture** is explained through various architecture views such as ```Functional Architecture```, ```Technical Architecture```, ```Deployment Architecture```, ```Component Designs``` and ```Technology Stack & Choices```, each addressing unique concerns of stakeholders & audience.
 * Highlights how the proposed solution addresses requirements & constraints with modern AI technology advances.
@@ -150,19 +150,18 @@ Agent:
 
 # Caller Query
 
-Caller: {Include caller problem audit transcirpt here}
+Caller: {Include caller problem audio transcirpt here}
 Agent:
 
 ```
 
-Have a look at my Prompt Engineering Notes on Github.
+Have a look at my [Prompt Engineering Notes](https://github.com/venkataravuri/ai-ml/blob/master/docs/prompt-engineering-resources.md) on Github.
 
 #### Process Flows & Information Models 
 
-
 The proposed solution includes below high-level processes,
 
-1. Create  & Manage Machine-readable Knowledge Bases
+1. Create & Manage Machine-readable Knowledge Bases
 2. Search Knowledge Bases human-agent answers for similar problems/issues.
 3. LLM Fine-tuning & Soft Prompting
 
@@ -221,20 +220,18 @@ LLM will be prompted with ```Conversation History```, relevant ```Business Syste
 
 #### :motorcycle: LLM Model Fine-tuning
 
-Pretrained large language foundation models can be used for new tasks in following ways,
-1. in-context learning
-2. Sort Prompt Tuning
+Pretrained large language foundation models can be used for domain specific tasks in following ways,
+1. In-context learning
+2. Soft Prompt Tuning
 3. Parameter-Efficient Finetuning
 
-In-context learning doesn’t require further train or finetune pretrained LLMs to perform specific or new tasks that the LLM wasn’t explicitly trained on. Instead, directly provide a few examples of a target task via the input prompt. Related to in-context learning is the concept of **hard prompt tuning** where inputs are modified in hope to improve the outputs.
+In-context learning doesn’t require further train or finetune pretrained LLMs to perform specific or new tasks that the LLM wasn’t explicitly trained on. Instead, directly provide a few examples of a target task via the input prompt. Related to in-context learning is the concept of **hard prompt tuning** where inputs are modified in hope to improve the outputs. This should be combined with Retrieval Augment Generation (RAG).
 
-Pre-trained Large language models (LLMs) may not perform as well on specific tasks without finetuning, finetuning it on a corpus of human-agent conversation transcripts can significantly improve the model's performance. 
-
-Finetuning LLMs can be very expensive in terms of computational resources and time, which is why researchers started developing parameter-efficient finetuning methods.
+Pre-trained Large language models (LLMs) may not perform as well on specific tasks without finetuning, finetuning it on a corpus of human-agent conversation transcripts can significantly improve the model's performance. Finetuning LLMs can be very expensive in terms of computational resources and time, rely on parameter-efficient finetuning methods.
 
 ### Technical Architecture
 
-A layered application architecture followed to turn system functions into software artifacts. Application components are designed as collection of microservices aka. Cloud-Native apps. Cloud native apps can exploit scale, elasticity, resiliency, and flexibility provided by in public clouds. Individual teams can work on these microservices and rollout new functionality quickly.
+A layered application architecture has been adopted for the solution. Majority of system components are designed as self contained services aka. microservices. The components adhere to Cloud-Native principles. Cloud native apps can exploit scale, elasticity, resiliency, and flexibility provided by in public clouds. Individual teams can work on these microservices and rollout new functionality quickly.
 
 - The Microservices designed as self contained services, packed as containers for portability, deployed to immutable infrastructure.
 - Microservices communicate with each other via APIs and use event-driven architecture, which makes them loosely coupled, serves to enhance the overall performance of each application. For latency reasons the services communicate over gRPC with proto buffers.
@@ -248,14 +245,10 @@ Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_
 
 | Component | High-level Design |
 | --- | --- |
-| **Channel Gateway** | The gateway should be designed as low-latency & high-througput service. Its a stateful service which has to be horizontally scaled. Preferred programming language for this service is C/C++ or GoLang. It interfaces with Orchestration Engine for autonomous conversation. The gateway interfaces with VOIP PABX and Internet to convert incoming audio stream into chunks.
+| **Channel Gateway** | The gateway should be designed as low-latency & high-througput service. Its a stateful service which can be scaled horizontally. Preferred programming language for this service is C/C++ or GoLang. It interfaces with Orchestration Engine for autonomous conversation. The gateway interfaces with VOIP PABX and Internet to convert incoming audio stream into chunks.
 | **Orchestration Engine** | It defines task sequencing to understand caller utterance, intent finding, prompt template selection, prompt llms and response generation. It should parallelize tasks where feasible. It employs Async I/O techniques to overcome low-latency and high-througput. The workfow state should be managed in in-memory for low-latency processing. It leverages LangChain framework components internally for many tasks. |
 | **UI/UX Interfaces** | Admin Console, Call Telemetry and KIP Dashboards are built as Single Page Applications using Node.JS, Next.JS with ReactJS compnents.|
-| **KubeFlow Pipelines** | Create and Manage Knowldge Base pipeline that creates training and test corpus using previously record human agent & caller voice conversations. <br />
-Create and index human agent voice conversations. <br />
-LLM models fine-tune pipeline witht training, validation and testing. <br />
-LLM benchmarking pipeline <br />
-LLM inferencing pipeline <br />|
+| **KubeFlow Pipelines** | Create and Manage Knowldge Base pipeline that creates training and test corpus using previously record human agent & caller voice conversations. <br />Create and index human agent voice conversations. <br />LLM models fine-tune pipeline witht training, validation and testing. <br />LLM benchmarking pipeline <br />LLM inferencing pipeline <br />|
 
 ### :balance_scale: Model Evaluation Metrics
 
