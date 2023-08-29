@@ -14,7 +14,7 @@ A fictitious company provides customer support services to multiple clients. Unt
 
 1. The system should receive IP-based calls where customers describe their issues, concerns, or tasks in natural language.
 2. AI BOT should answer every customer call.
-3. The AI BOT must determine the customer's intent by analyzing the voice conversation.
+3. The AI BOT must determine the customer's intent by analysing the voice conversation.
 4. The system should be able to record the call, generate a transcript, and measure the BOT's understanding quality.
 5. The BOT's response to the customer should be derived from previous human agent responses to similar queries, issues, or concerns.
 6. The system have access to a corpus of previous human agent voice conversations and transcriptions.
@@ -33,7 +33,7 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 1. A high-level architecture diagram of the system.
 2. A detailed explanation of each component in the system.
 3. Process & Data flow diagrams showing how data moves between components.
-4. List out the technologies choosen to implement the solution. Justification for technology choices made.
+4. List out the technologies chosen to implement the solution. Justification for technology choices made.
 5. A strategy to ensure high availability, scalability, and security of the system.
 6. Potential challenges and their proposed solutions.
 7. Design storage and search mechanisms for the transcripts and voice recordings.
@@ -47,7 +47,7 @@ This document captures **high-level solution** of _autonomous AI agent driven co
 
 ### :rainbow: Functional Analysis & Design
 
-A quick use-case analysis has yielded essential buisness functions which are mapped into system fuctions. These related system functions are grouped into functional modules later translated into :minidisc: software components.
+A quick use-case analysis has yielded essential business functions which are mapped into system functions. These related system functions are grouped into functional modules later translated into :minidisc: software components.
 
 | Functional Module | Description |
 | --- | --- |
@@ -57,21 +57,21 @@ A quick use-case analysis has yielded essential buisness functions which are map
 | Analytics Dashboard | A GUI interface to display Key Performance Indicators (KPIs) showcasing operational efficiency. |
 | ML training, validation, testing, Serving | A framework for training data preparation,  ML model training validation
 
-#### :rocket: Non-Functional Requirments
+#### :rocket: Non-Functional Requirements
 
-As an interactive system, the solution should adhere to folloiwng NFRs,
+As an interactive system, the solution should adhere to following NFRs,
 
 1. Low-latency: Being a voice based conversational system, it should process requests in sub-second, so that caller should not feel any delay.
 2. Multi-language: Support multiple spoken languages, should detect language automatically and reply in same language.
-3. Should have gaurdrails against hallucination, toxcity, bias.
+3. Should have guardrails against hallucination, toxicity, bias.
 
-Performance Assurance section below highlighs how some of the above NFRs are met.
+Performance Assurance section below highlights how some of the above NFRs are met.
 
 ## :bulb: Solution Architecture
 
-AI has become more ubiquitous in every software product including contact centers. As AI technology continues to develop, more and more contact centers are using AI to improve customer service. Unlike previous rule-based ML models, Generative AI has great capacity to solve the challenges of contact centers, both improving customer experience and increasing efficiency among human agents.
+AI has become more ubiquitous in every software product including contact centres. As AI technology continues to develop, more and more contact centres are using AI to improve customer service. Unlike previous rule-based ML models, Generative AI has great capacity to solve the challenges of contact centres, both improving customer experience and increasing efficiency among human agents.
 
-The proposed solution takes advantage of Generative AI technology to improve contact center opertions through AI-enabled virtual assistants. The solution embraces LLM powered AI agents to augment the work of call center agents throuugh “task orchestration” to make contact center work more efficient.
+The proposed solution takes advantage of Generative AI technology to improve contact centre operations through AI-enabled virtual assistants. The solution embraces LLM powered AI agents to augment the work of call centre agents through “task orchestration” to make contact centre work more efficient.
 
 The LLM powered agents can control of the customer conversation, without having to transfer the interaction to a live agent, and the customer is able to complete their task with self-service without even being aware of the AI-agent collaboration happening.
 
@@ -79,7 +79,7 @@ The LLM powered agents can control of the customer conversation, without having 
 
 Traditional NLU ML models takes user input in text format and extract structured data (intents and entities) which helps and assistant to understand what the caller wants. The NLU pipelines rely on hand-crafted rules or predefined response templates, which limit their conversational scope, adaptability, and ability to generate diverse responses. Rule-based chatbots can feel robotic sometimes.
 
-:speech_balloon: Large Language Models (LLMs) have potential use beyond text generation, summarization, and code generation. LLMs are exhibiting logical reasoning capabilbies, if prompted well they can recognize caller's intent and generate contextually appropriate responses, and adapt to user inputs. 
+:speech_balloon: Large Language Models (LLMs) have potential use beyond text generation, summarization, and code generation. LLMs are exhibiting logical reasoning capabilities, if prompted well they can recognize caller's intent and generate contextually appropriate responses, and adapt to user inputs. 
 
 They can,
 - Deliver personalized experiences at scale.
@@ -102,13 +102,13 @@ The solution includes below architectural significant components,
 
 | Subystem / Component | Description |
 | --- | --- |
-| **Channel Gateway** | An unified routing engine that handles both audio/voice and text traffic. It receives audio segments from VOIP/PABX and from voice based applications, chunkify them, forward to Orchestrtion Engine further processing.|
-| **:mega: Transcript Engine & Speech Synthesiser** | Turns audio segments into natural language transcripts and vice versa. It uses speech-to-text and text-to-speech ML models such as OpenAI Whishper. |
-| **Semantic Search & Retrieval Engine** | Performs semantic search on text corpus indexed in vector databases. It does transcript splitting, generate vector embeddeings through text embedding models, index & store embedding chunks in vector databases. They use semantic search algorithms such as approximate nearest neighbor (ANN) to retireive relvant transcript chunks for given text context.|
-| **Orchestration Engine** | A central task planning, sequencing and execution engine. It is powered by autonomous LLM agent frameworks such as LangChain or LlamaIndex or others. It processes user queries by chaining various tasks which includes audio to text conversion, retrieving relvant documents, prompt selection, generate response and convert into audio. It includes various connectors/plug-ins/tools to perform the tasks. |
-| **ML Pipelines** | A collection of pipelines for LLM model fine-tuning, training, valiation and testing. Pipelines for preparing & updating training corpus by using past human-agent & customer audo recordings. Pipelines to populate Vector database and indexing content. |
-| **ML Models & Datat Stores** | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage uints.|
-| **UI/UX - Dashboards & Admin Console** | An AI powered visualizations & KPIs interested to company executives (CXOs), System telemetry information, and sytem administration & configuration UI.|
+| **Channel Gateway** | An unified routing engine that handles both audio/voice and text traffic. It receives audio segments from VOIP/PABX and from voice based applications, chunkify them, forward to Orchestration Engine further processing.|
+| **:mega: Transcript Engine & Speech Synthesiser** | Turns audio segments into natural language transcripts and vice versa. It uses speech-to-text and text-to-speech ML models such as OpenAI Whisper. |
+| **Semantic Search & Retrieval Engine** | Performs semantic search on text corpus indexed in vector databases. It does transcript splitting, generate vector embeddings through text embedding models, index & store embedding chunks in vector databases. They use semantic search algorithms such as approximate nearest neighbour (ANN) to retrieve relevant transcript chunks for given text context.|
+| **Orchestration Engine** | A central task planning, sequencing and execution engine. It is powered by autonomous LLM agent frameworks such as LangChain or LlamaIndex or others. It processes user queries by chaining various tasks which includes audio to text conversion, retrieving relevant documents, prompt selection, generate response and convert into audio. It includes various connectors/plug-ins/tools to perform the tasks. |
+| **ML Pipelines** | A collection of pipelines for LLM model fine-tuning, training, validation and testing. Pipelines for preparing & updating training corpus by using past human-agent & customer audio recordings. Pipelines to populate Vector database and indexing content. |
+| **ML Models & Data Stores** | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage units.|
+| **UI/UX - Dashboards & Admin Console** | An AI powered visualizations & KPIs interested to company executives (CXOs), System telemetry information, and system administration & configuration UI.|
 
 ### Half-duplex Vs Full-duplex Communications
 
@@ -117,7 +117,7 @@ AI agent can designed for half-duplex & full-duplex communication modes,
 - Half-duplex architectures, means the user and the assistant must take turns to speak. Neither caller/agent cannot interrupt. Its a turn-based conversational model.
 - Full-duplex architectures enable bi-directional communication as both parties are always listening even when speaking or acting
 
-Will full-duplex architecture callers can correct the AI’s understanding as soon as it is apparent there is an issue which enables more efficient interactions. Full-duplex can perform actual proactive moderation of live voice chat because the system is not batching text to be analyzed but instead analyzing the meaning of the user speech in parallel with transcription.
+Will full-duplex architecture callers can correct the AI’s understanding as soon as it is apparent there is an issue which enables more efficient interactions. Full-duplex can perform actual proactive moderation of live voice chat because the system is not batching text to be analysed but instead analysing the meaning of the user speech in parallel with transcription.
 
 Start with half-duplex communication and progress into full-duplex as we make progress.
 
@@ -125,7 +125,7 @@ Start with half-duplex communication and progress into full-duplex as we make pr
 
 ### Prompt Engineering
 
-The solution employs prompt engineering techniques to respond caller. Experiments should be carried out to find right prompt engineering techinquie, which could be mix of,
+The solution employs prompt engineering techniques to respond caller. Experiments should be carried out to find right prompt engineering technique, which could be mix of,
 - [Retrieval Augmented Generation (RAG)](https://www.promptingguide.ai/techniques/rag)
 - [Automatic Reasoning and Tool-use (ART)](https://www.promptingguide.ai/techniques/art)
 
@@ -134,8 +134,8 @@ Here is a sample prompt,
 ```
 Ignore all previous instructions. Here is your new role and persona:
 
-You are a call center human-agent, your task is to help customer by understaning the problem and
-provide precise and concise answer with not morethan 10 to 20 word.
+You are a call centre human-agent, your task is to help customer by understanding the problem and
+provide precise and concise answer with not more than 10 to 20 word.
 Restrict your response to company product, services as per company policy documents.
 Do not make up stuff, if you don't know the real answer, suggest to forward call to human agent.
 
@@ -144,8 +144,8 @@ Be very helpful, motivating and show empathy in your responses. Be polite.
 ## Conversation History
 Agent: Welcome to {Company}'s customer support service. Kindly state your problem?
 Caller: I have bought a new mobile phone at {company} store and also bought
-new 5G SIM card other day. But it is not activiated till now.
-Agent: Sorry for inconvinience, our records show that address on form and driving license
+new 5G SIM card other day. But it is not activated till now.
+Agent: Sorry for inconvenience, our records show that address on form and driving license
 address is not matching.
 
 ## Additional Context
@@ -154,7 +154,7 @@ address is not matching.
 
 ## Caller Query
 
-Caller: {Include caller problem audio transcirpt here} e.g., How can re-submit application form online?
+Caller: {Include caller problem audio transcript here} e.g., How can re-submit application form online?
 Agent:
 ```
 
@@ -168,13 +168,13 @@ The proposed solution includes below high-level processes,
 2. Search Knowledge Bases human-agent answers for similar problems/issues.
 3. LLM Fine-tuning & Soft Prompting
 
-### :green_book: Machine-readble Knowledge Bases
+### :green_book: Machine-readable Knowledge Bases
 
-A knowledge base (KB) is a self-service customer service library that includes information about a product, service, answers to FAQs, company procedcures and polocies and more. Unlike human-readable KB articles, machine-readable knowledge bases store data that can easily intrepeted & used by ML models & systems. 
+A knowledge base (KB) is a self-service customer service library that includes information about a product, service, answers to FAQs, company procedures and policies and more. Unlike human-readable KB articles, machine-readable knowledge bases store data that can easily interpreted & used by ML models & systems. 
 
 These Knowledge Bases (KB) are created using _past customer & human-agent conversations (voice segments)_.
 
-Below diagram depicts, high-level tasks involved in converting call voice segments into transcripts and organize them to be used later infromation source during ML model training phase, 
+Below diagram depicts, high-level tasks involved in converting call voice segments into transcripts and organize them to be used later information source during ML model training phase, 
 
 <table style="width: 100%;">
   <tr>
@@ -183,7 +183,7 @@ Below diagram depicts, high-level tasks involved in converting call voice segmen
     <ul>
       <li>Fetch past caller and human-agent responses audio segments.</li>
       <li>Generate text transcripts using Speech-to-text models such as <a href="https://openai.com/research/whisper" target="_blank">OpenAI Whisper</a>.</li>
-      <li>Generate text embeddings for transcript chunk using <a href="https://huggingface.co/sentence-transformers" target="_blank">Huggingface statement transformers</a> or other open-soure text embeddings models.</li>
+      <li>Generate text embeddings for transcript chunk using <a href="https://huggingface.co/sentence-transformers" target="_blank">Huggingface statement transformers</a> or other open-source text embeddings models.</li>
       <li>Store original transcripts and transcript embedding chunks into Vector DB.</li>
     </ul>
   </td>
@@ -218,8 +218,8 @@ Below diagram depicts high-level tasks to generate response using LLMs prompting
 Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_id=799154363440) diagram.
 
 LLM will be prompted with ```Conversation History```, relevant ```Business Systems Data``` and ```Caller Question/Conversation```
-- LLM generates respoinse
-- The response text is synthesised in voice respones and played back to caller.
+- LLM generates response
+- The response text is synthesised in voice response and played back to caller.
 
 #### :motorcycle: LLM Model Fine-tuning
 
@@ -234,9 +234,9 @@ Pre-trained Large language models (LLMs) may not perform as well on specific tas
 
 ### :fire: Technical Architecture
 
-A layered application architecture has been adopted for the solution. Majority of system components are designed as self contained services aka. microservices. The components adhere to Cloud-Native principles. Cloud native apps can exploit scale, elasticity, resiliency, and flexibility provided by in public clouds. Individual teams can work on these microservices and rollout new functionality quickly.
+A layered application architecture has been adopted for the solution. Majority of system components are designed as self-contained services aka. microservices. The components adhere to Cloud-Native principles. Cloud native apps can exploit scale, elasticity, resiliency, and flexibility provided by in public clouds. Individual teams can work on these microservices and rollout new functionality quickly.
 
-- The Microservices designed as self contained services, packed as containers for portability, deployed to immutable infrastructure.
+- The Microservices designed as self-contained services, packed as containers for portability, deployed to immutable infrastructure.
 - Microservices communicate with each other via APIs and use event-driven architecture, which makes them loosely coupled, serves to enhance the overall performance of each application. For latency reasons the services communicate over gRPC with proto buffers.
 - Each service can be written in a different programming language and tested separately.
 
@@ -248,17 +248,17 @@ Click here to modify [Miro](https://miro.com/app/board/uXjVMrUCYIg=/?share_link_
 
 | Component | High-level Design |
 | --- | --- |
-| **Channel Gateway** | The gateway should be designed as low-latency & high-througput service. Its a stateful service which can be scaled horizontally. Preferred programming language for this service is C/C++ or GoLang. It interfaces with Orchestration Engine for autonomous conversation. The gateway interfaces with VOIP PABX and Internet to convert incoming audio stream into chunks.
-| **Orchestration Engine** | It defines task sequencing to understand caller utterance, intent finding, prompt template selection, prompt llms and response generation. It should parallelize tasks where feasible. It employs Async I/O techniques to overcome low-latency and high-througput. The workfow state should be managed in in-memory for low-latency processing. It leverages LangChain framework components internally for many tasks. |
-| **:bar_chart: UI/UX Interfaces** | Admin Console, Call Telemetry and KIP Dashboards are built as Single Page Applications using Node.JS, Next.JS with ReactJS compnents.|
-| **KubeFlow Pipelines** | Create and Manage Knowldge Base pipeline that creates training and test corpus using previously record human agent & caller voice conversations. <br />Create and index human agent voice conversations. <br />LLM models fine-tune pipeline witht training, validation and testing. <br />LLM benchmarking pipeline <br />LLM inferencing pipeline <br />|
+| **Channel Gateway** | The gateway should be designed as low-latency & high-throughput service. Its a stateful service which can be scaled horizontally. Preferred programming language for this service is C/C++ or GoLang. It interfaces with Orchestration Engine for autonomous conversation. The gateway interfaces with VOIP PABX and Internet to convert incoming audio stream into chunks.
+| **Orchestration Engine** | It defines task sequencing to understand caller utterance, intent finding, prompt template selection, prompt LLMs and response generation. It should parallelize tasks where feasible. It employs Async I/O techniques to overcome low-latency and high-throughput. The workflow state should be managed in in-memory for low-latency processing. It leverages LangChain framework components internally for many tasks. |
+| **:bar_chart: UI/UX Interfaces** | Admin Console, Call Telemetry and KIP Dashboards are built as Single Page Applications using Node.JS, Next.JS with ReactJS components.|
+| **KubeFlow Pipelines** | Create and Manage Knowledge Base pipeline that creates training and test corpus using previously record human agent & caller voice conversations. <br />Create and index human agent voice conversations. <br />LLM models fine-tune pipeline with training, validation and testing. <br />LLM benchmarking pipeline <br />LLM inferencing pipeline <br />|
 
 ### :balance_scale: Model Evaluation Metrics
 
-LLM & Other models are evaluated with following metrics that evaluate for accuracy, relvance, toxicity and bians and many other aspects,
+LLM & Other models are evaluated with following metrics that evaluate for accuracy, relevance, toxicity and bias and many other aspects,
 
 - **Perplexity**: Intuitively, perplexity means to be surprised. Perplexity is usually used only to determine how well a model has learned the training set. How much the model is surprised by seeing new data. Perplexity is calculated as exponent of the loss obtained from the model.
-- **ROGUE & BLEU**:  Used on the testset to measure test performance. Metric compares an automatically produced summary or translation against human-produced summary or translation. It measures how many of the n-grams in the references are in the predicted candidate.
+- **ROGUE & BLEU**:  Used on the test set to measure test performance. Metric compares an automatically produced summary or translation against human-produced summary or translation. It measures how many of the n-grams in the references are in the predicted candidate.
 - **GLUE benchmark** that measures the general language understanding ability.
 
 Source: https://huggingface.co/evaluate-metric
@@ -273,12 +273,12 @@ Use bias evaluation metric [HONEST](https://huggingface.co/spaces/evaluate-measu
 
 LLMs are evolving research topic. Conduct experiments with past human-agent responses as training and validation corpus.
 
-Use combination of NLU models like RASA DIET along wiht LLMs.
+Use combination of NLU models like RASA DIET along with LLMs.
 
 ### Deployment Architecture
 
 A rough sketch of deployment design. Due to time constraints could not depict below information,
-1. Regions, zones and autoscalability
+1. Regions, zones and auto scalability
 2. Protocols and traffic connections
 3. and more ...
 
@@ -288,7 +288,7 @@ https://docs.google.com/presentation/d/1rxz_4hgOfYA0cCVt5xek8KbYtX1OWBTSkCZrFH91
 
 ### :surfer: Performance Assurance
 
-Critical performance criteril is low-latency transactions. It means, agent should respond in sub-seconds < 250 to 500 milli seconds, otherwise caller will notice lag and impacts experience.
+Critical performance is low-latency transactions. It means, agent should respond in sub-seconds < 250 to 500 milli seconds, otherwise caller will notice lag and impacts experience.
 
 To achieve low-latency, every component in chain MUST adhere to performance budgets in terms of time. Below are performance budgets of each component,
 
@@ -297,7 +297,7 @@ To achieve low-latency, every component in chain MUST adhere to performance budg
 
 ### :lock: Security Architecture, Privacy and Compliance :old_key:
 
-Security Architecture is about how Confidentiality, Integrity, Availability (CIA) ensure in entire solutionn across all components and interfaces.
+Security Architecture is about how Confidentiality, Integrity, Availability (CIA) ensure in entire solution across all components and interfaces.
 
 #### Authentication & Authorization
 
@@ -315,7 +315,7 @@ As solution is offered as SaaS application globally, it will be subjected to pri
 Globally, data localization rules are not uniform and many countries have adopted their own laws which can vary based on the types of personal data covered and the scope of their respective requirements. GDPR, California Consumer Privacy Act (CCPA), Russia, India and other countries different data localization and residency laws. Most of the laws enforce,
 
 - A copy of the data must be stored local to country, unless an exception applies. Cross border transfers are permitted unless an exception applies.
-- Deploy few frontend/gateway components across multiple geo locations to store a copy of data, before it cross boarders.
+- Deploy few frontend/gateway components across multiple geo locations to store a copy of data, before it cross borders.
 - Leverage GSLB & CDN's geo-proximity based routing capabilities to direct traffic right data centre.
 - Implement mechanisms to detect and deleted "Data Subject Rights" using 3rd party tools like BigPanda.
 
@@ -323,7 +323,7 @@ Globally, data localization rules are not uniform and many countries have adopte
 
 Due to time constraints, following design aspects are not covered,
 1. Protocols & interfacing mechanisms between components.
-2. Could not ariticulate multi-tenant aspects such as Tenant Isolatin, Tenant Aware Components Design, Noisy neighbour gaurdrails.
+2. Could not articulate multi-tenant aspects such as Tenant Isolation, Tenant Aware Components Design, Noisy neighbour guardrails.
 
 #### References
 - https://docs.langchain.com/docs/
