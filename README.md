@@ -274,15 +274,38 @@ Model Evaluation & Live Experimentation
 
 Critical performance criteril is low-latency transactions. It means, agent should respond in sub-seconds < 250 to 500 milli seconds, otherwise caller will notice lag and impacts experience.
 
-To achieve low-latency, every component in chain will have performance budgets in terms of time. Below is performance budget of each component,
+To achieve low-latency, every component in chain MUST adhere to performance budgets in terms of time. Below are performance budgets of each component,
 
 
 ### Security Architecture, Privacy and Compliance
+
+Security Architecture is about how Confidentiality, Integrity, Availability (CIA) ensure in entire solutionn across all components and interfaces.
+
+#### Authentication & Authorization
+
+- A multi-factor authentication (MFA) should be established for accessing SaaS application & services.
+- All internal and external communications will be done through secure channel mostly TLS.
+- For Public APIs, OAuth based client & secret based mechanism would be ideal.
+- For internal APIs, mTLS is right option along with Tenant ID propagation through (X-Tenant-ID) and other mechanisms.
+- Leverage Key Management solutions such as HashiCorp Valut to store credentials and certificates.
+- Authorization by roles and permissions by actor.
+
+#### Privacy & Data Residency
+
+As solution is offered as SaaS application globally, it will be subjected to privacy and data localization requirements.
+
+Globally, data localization rules are not uniform and many countries have adopted their own laws which can vary based on the types of personal data covered and the scope of their respective requirements. GDPR, California Consumer Privacy Act (CCPA), Russia, India and other countries different data localization and residency laws. Most of the laws enforce,
+
+- A copy of the data must be stored local to country, unless an exception applies. Cross border transfers are permitted unless an exception applies.
+- Deploy few frontend/gateway components across multiple geo locations to store a copy of data, before it cross boarders.
+- Leverage GSLB & CDN's geo-proximity based routing capabilities to direct traffic right data centre.
+- Implement mechanisms to detect and deleted "Data Subject Rights" using 3rd party tools like BigPanda.
 
 ### Out of Scope
 
 Due to time constraints, following design aspects are not covered,
 1. Protocols & interfacing mechanisms between components.
+2. Could not ariticulate multi-tenant aspects such as Tenant Isolatin, Tenant Aware Components Design, Noisy neighbour gaurdrails.
 
 #### References
 - https://docs.langchain.com/docs/
