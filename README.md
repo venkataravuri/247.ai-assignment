@@ -40,23 +40,24 @@ Design an AI BOT solution to handle these conversations over IP telephony. The p
 
 ## :rocket: Solution :100:
 
-This document captures h**igh-level solution** of _re-engineered_ and _re-architected_ solution that replaces existing human-agent centric customer support call centre with :brain: an **AI/ML driven**, :robot: **BOT oriented**, 🚀 **scalable**, 〰️ **elastic** & 🏢 a **multi-tenant** autonomous call centre solution.
+This document captures **high-level solution** of _autonomous AI agent driven contact center_ system that replaces existing human-agent centric customer support call centre with :brain: an **AI/ML driven**, :robot: **BOT oriented**, 🚀 **scalable**, 〰️ **elastic** & 🏢 a **multi-tenant** autonomous call centre solution.
 
-* The 🎡 **To-Be System Architecture** is explained through various architecture views such as ```Functional Architecture, Technical Architecture, Deployment Architecture, Component Designs, Technology Choices``` and more, each addressing unique concerns of various stakeholders & audience.
-* Highlights how the proposed solution addresses limitations & constraints for current system with modern AI technology advances.
+* The 🎡 **To-Be System Architecture** is explained through various architecture views such as ```Functional Architecture```, ```Technical Architecture```, ```Deployment Architecture```, ```Component Designs``` and ```Technology Stack & Choices```, each addressing unique concerns of stakeholders & audience.
+* Highlights how the proposed solution addresses requirements & constraints with modern AI technology advances.
 
 ### Functional Analysis & Design
 
-A quick use-case analysis has yielded essential buisness functions which are mapped into system fuctions. Related system functions are grouped into functional modules later to be translated into software components.
+A quick use-case analysis has yielded essential buisness functions which are mapped into system fuctions. These related system functions are grouped into functional modules later translated into software components.
 
-| Functional Module | Description | Critical System Functions|
-| --- | --- | --- |
-| Voice Gateway | 
-|
-| 
+| Functional Module | Description |
+| --- | --- |
+| Channel Interfaces | A unified communication interface that accepts & answers voice calls made by phone, voice based queries from an web or mobile application and text-based chat interface. |
+| Analytics Dashboard | A GUI interface to display Key Performance Indicators (KPIs) showcasing operational efficiency. |
+| ML training, validation, testing, Serving | A framework for training data preparation,  ML model training validation
 
 #### Non-Functional Requirments
-Solution should adhere to folloiwng NFRs,
+
+As an interactive system, the solution should adhere to folloiwng NFRs,
 
 1. Low-latency: Being a voice based conversational system, it should process requests in sub-second, so that caller should not feel any delay.
 2. Multi-language: Support multiple spoken languages, should detect language automatically and reply in same language.
@@ -69,9 +70,22 @@ Performance Assurance section below highlighs how some of the above NFRs are met
 
 AI has become more ubiquitous in every software product including contact centers. As AI technology continues to develop, more and more contact centers are using AI to improve customer service. Unlike previous rule-based ML models, Generative AI has great capacity to solve the challenges of contact centers, both improving customer experience and increasing efficiency among human agents.
 
-The proposed solution takes advantage of Gen AI technology to improve contact center opertions through AI-enabled virtual assistants. The solution embraces LLM powered AI agents to augment the work of call center agents throuugh “task orchestration” to make contact center work more efficient.
+The proposed solution takes advantage of Generative AI technology to improve contact center opertions through AI-enabled virtual assistants. The solution embraces LLM powered AI agents to augment the work of call center agents throuugh “task orchestration” to make contact center work more efficient.
 
 The LLM powered agents can control of the customer conversation, without having to transfer the interaction to a live agent, and the customer is able to complete their task with self-service without even being aware of the AI-agent collaboration happening.
+
+### Generative AI (LLM) Vs. Rule-based NLP/NLU
+
+Traditional NLU ML models takes user input in text format and extract structured data (intents and entities) which helps and assistant to understand what the caller wants. The NLU pipelines rely on hand-crafted rules or predefined response templates, which limit their conversational scope, adaptability, and ability to generate diverse responses. Rule-based chatbots can feel robotic sometimes.
+
+Large Language Models (LLMs) have potential use beyond text generation, summarization, and code generation. LLMs are exhibiting logical reasoning capabilbies, if prompted well they can recognize caller's intent and generate contextually appropriate responses, and adapt to user inputs. 
+
+They can,
+- Deliver personalized experiences at scale.
+- Efficiently handling complex queries and context.
+- Adapts and learns through every interaction (context-aware).
+- Engages customers with human-like conversations
+- Pinpoints user intentions with precision
 
 Below diagram depicts critical subsystems and components in the solution,
 
@@ -83,32 +97,43 @@ Generative AI LLM models has capability to maintain context throughout an intera
 
 The solution includes below architectural significant components,
 
-| Subystem / Component | Description | Component Design |
-| --- | --- | --- |
-| **Channel Gateway** | An unified routing engine that handles all kinds of traffic such as voice and instant messaging ???? | ??? |
-| **Transcript Engine & Speech Synthesiser** | Turns audio segments into natural language transcripts and vice versa. It uses speech-to-text and text-to-speech ML models. | |
-| **Semantic Search & Retrieval Engine** | Performs semantic search on text corpus indexed in vector databases. These engines does transcript splitting, generate embeddeings through text embedding models, index & store embedding chunks in vector databases. the also use semantic search algorithms to retireive relvant transcript chunks for given text context.||
-| **Orchestration Engine** | A central task planning, sequencing and execution engine. It is powered by autonomous LLM agent frameworks such as LangChain or LlamaIndex or others. It processes user queries by chaining various tasks which includes audio to text conversion, retrieving relvant documents, prompt selection, generate response and convert into audio. It includes various connectors/plug-ins/tools to perform the tasks.||
-| **ML Pipelines** | A collection of pipelines for LLM model fine-tuning, training, valiation and testing. Pipelines for preparing & updating training corpus by using past human-agent & customer audo recordings. Pipelines to populate Vector database and indexing content. | ? |
-| ML Models & Datat Stores | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage uints.| ? |
-| **UI/UX - Dashboards & Admin Console** | An AI powered visualizations & KPIs interested to company executives (CXOs), System telemetry information, and sytem administration & configuration UI.| ? |
+| Subystem / Component | Description |
+| --- | --- |
+| **Channel Gateway** | An unified routing engine that handles both audio/voice and text traffic. It receives audio segments from VOIP/PABX and from voice based applications, chunkify them, forward to Orchestrtion Engine further processing.|
+| **Transcript Engine & Speech Synthesiser** | Turns audio segments into natural language transcripts and vice versa. It uses speech-to-text and text-to-speech ML models such as OpenAI Whishper. |
+| **Semantic Search & Retrieval Engine** | Performs semantic search on text corpus indexed in vector databases. It does transcript splitting, generate vector embeddeings through text embedding models, index & store embedding chunks in vector databases. They use semantic search algorithms such as approximate nearest neighbor (ANN) to retireive relvant transcript chunks for given text context.|
+| **Orchestration Engine** | A central task planning, sequencing and execution engine. It is powered by autonomous LLM agent frameworks such as LangChain or LlamaIndex or others. It processes user queries by chaining various tasks which includes audio to text conversion, retrieving relvant documents, prompt selection, generate response and convert into audio. It includes various connectors/plug-ins/tools to perform the tasks. |
+| **ML Pipelines** | A collection of pipelines for LLM model fine-tuning, training, valiation and testing. Pipelines for preparing & updating training corpus by using past human-agent & customer audo recordings. Pipelines to populate Vector database and indexing content. |
+| **ML Models & Datat Stores** | The solution uses various ML models such as Generative AI LLM models, Text Embeddings Models, Text-to-Speech & Speech-to-Text models. The solutions uses Vector DBs, Distributed Caching Stores, Audi Segments Storage uints.|
+| **UI/UX - Dashboards & Admin Console** | An AI powered visualizations & KPIs interested to company executives (CXOs), System telemetry information, and sytem administration & configuration UI.|
 
 ### Half-duplex Vs Full-duplex Communications
 
-AI agent can designed for half-duplex & full-duplex communication models,
+AI agent can designed for half-duplex & full-duplex communication modes,
 
-- Half-duplex architectures, which means the user and the assistant must take turns to speak. Neither caller/agent cannot interrupt. Its a turn-based conversational model.
+- Half-duplex architectures, means the user and the assistant must take turns to speak. Neither caller/agent cannot interrupt. Its a turn-based conversational model.
 - Full-duplex architectures enable bi-directional communication as both parties are always listening even when speaking or acting
 
 Will full-duplex architecture callers can correct the AI’s understanding as soon as it is apparent there is an issue which enables more efficient interactions. Full-duplex can perform actual proactive moderation of live voice chat because the system is not batching text to be analyzed but instead analyzing the meaning of the user speech in parallel with transcription.
 
 Start with half-duplex communication and progress into full-duplex as we make progress.
 
+> Exploration Task: Had little bit of ambiguity on this topic, need to investigate further.
+
 ### Prompt Engineering
 
-The solution employs prompt engineering techniques to respond caller. Prompt engineering techinquies such as Retrieval Augmented Generation (RAG), Tree of Thoughts or anyother time-efficient techinques.
+The solution employs prompt engineering techniques to respond caller. Experiments should be carried out to find right prompt engineering techinquie, which could be mix of,
+- [Retrieval Augmented Generation (RAG)](https://www.promptingguide.ai/techniques/rag)
+- [Automatic Reasoning and Tool-use (ART)](https://www.promptingguide.ai/techniques/art)
+
+Here is a sample prompt,
 
 ```
+Ignore all previous instructions. Here is your new role and persona:
+
+You are a call center human-agent, your task is to help customer by understaning the problem and provide precise and concise answer with not morethan 10 to 20 words about company product, services.
+
+Be very helpful, empathtic and motivating in your responses. Be polite. 
 
 # Conversation History
 
@@ -120,21 +145,26 @@ Agent:
 
 # Additional Context
 
+1. Caller has bought our product on February 2023.
+2. Caller reached out call center earlier in July 2023 for coniguration issue.
+
 # Caller Query
 
-Caller:
+Caller: {Include caller problem audit transcirpt here}
 Agent:
 
 ```
+
+Have a look at my Prompt Engineering Notes on Github.
 
 #### Process Flows & Information Models 
 
 
 The proposed solution includes below high-level processes,
 
-1. Creare  & Manage Machine-readable Knowledge Bases
-2. ?
-3. ?
+1. Create  & Manage Machine-readable Knowledge Bases
+2. Search Knowledge Bases human-agent answers for similar problems/issues.
+3. LLM Fine-tuning & Soft Prompting
 
 ### Machine-readble Knowledge Bases
 
@@ -201,10 +231,6 @@ In-context learning doesn’t require further train or finetune pretrained LLMs 
 Pre-trained Large language models (LLMs) may not perform as well on specific tasks without finetuning, finetuning it on a corpus of human-agent conversation transcripts can significantly improve the model's performance. 
 
 Finetuning LLMs can be very expensive in terms of computational resources and time, which is why researchers started developing parameter-efficient finetuning methods.
-
-### Retrieval Augment Generation
-
-???
 
 ### Technical Architecture
 
