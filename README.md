@@ -123,7 +123,7 @@ Start with half-duplex communication and progress into full-duplex as we make pr
 
 > Exploration Task: Had little bit of ambiguity on this topic, need to investigate further.
 
-🌟 Meta's latest innovation on audio language translations - https://seamless.metademolab.com/
+🌟 Meta's latest innovation on audio language translations - https://seamless.metademolab.com/. Seamless M4t - A multi lingual, mutli tasking, multimodality voice model.
 
 _Shouldn't we need translation engine?_
 
