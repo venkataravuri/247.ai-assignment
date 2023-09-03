@@ -123,6 +123,10 @@ Start with half-duplex communication and progress into full-duplex as we make pr
 
 > Exploration Task: Had little bit of ambiguity on this topic, need to investigate further.
 
+🌟 Meta's latest innovation on audio language translations - https://seamless.metademolab.com/
+
+_Shouldn't we need translation engine?_
+
 ### Prompt Engineering
 
 The solution employs prompt engineering techniques to respond caller. Experiments should be carried out to find right prompt engineering technique, which could be mix of,
