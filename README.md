@@ -236,6 +236,16 @@ In-context learning doesn’t require further train or finetune pretrained LLMs 
 
 Pre-trained Large language models (LLMs) may not perform as well on specific tasks without finetuning, finetuning it on a corpus of human-agent conversation transcripts can significantly improve the model's performance. Finetuning LLMs can be very expensive in terms of computational resources and time, rely on parameter-efficient finetuning methods.
 
+Below are the steps to fine-tune a LLM model such as Llama 2 using synthetic dataset created from past human-agen transcripts,
+
+- PEFT Parameter Efficient Fine-Tuning
+- LoRA Low Rank Approximation for Tensors
+- 8bit or 4bit quantization of all weight tensors and others
+- TRL Transformers Reinforcment Learning
+- SFT Trainer - Supervised Finetuning Script by HF
+
+Result is a finetuned LLM for a specfic, defined task.
+
 ### :fire: Technical Architecture
 
 A layered application architecture has been adopted for the solution. Majority of system components are designed as self-contained services aka. microservices. The components adhere to Cloud-Native principles. Cloud native apps can exploit scale, elasticity, resiliency, and flexibility provided by in public clouds. Individual teams can work on these microservices and rollout new functionality quickly.
